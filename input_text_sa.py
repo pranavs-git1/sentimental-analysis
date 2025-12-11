@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 nltk.download('punkt_tab', force=True)
 
+analyzer = SentimentIntensityAnalyzer()
 
 def get_sentiment(text):
     sentiment_score = analyzer.polarity_scores(text)
@@ -53,4 +54,5 @@ print(f"→ Scores: {scores}")
 if "Positive" in sentiment:
     positive_text = extract_positive_words(text)
     create_positive_image(positive_text)
+
 
